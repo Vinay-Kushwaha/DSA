@@ -1,0 +1,25 @@
+Approach: 
+It can be observed that there are three types of intersections:  
+
+
+    The number of ways to choose a pair of points from X circles is \binom{X}{2} . Each such pair intersect at most two points.
+    The number of ways to choose a pair of points from Y lines is \binom{Y}{2} . Each such pair intersect in at most one point.
+    The number of ways to choose one circle and one line from X circles and Y lines is is X*Y . Each such pair intersect in at most two points. 
+
+    So, the maximum number of point of intersection can be calculated as: 
+    => 2*XC2 + YC2 + 2*X*Y
+    => X*(X - 1) + Y*(Y - 1)/2 + 2*X*Y
+     
+
+Thus, formula to find maximum number of point of intersection of X circles and Y straight lines is: 
+Y*(Y - 1)/2 + X*(2*Y + X - 1)
+
+Below is the implementation of the above approach:  
+
+public class Solution {
+    public int getIntersection(int A, int B) {
+        int k = A*(A-1)/2;
+        k = k+B*(2*A +B-1);
+        return k;
+    }
+}
