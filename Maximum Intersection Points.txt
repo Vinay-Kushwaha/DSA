@@ -1,7 +1,0 @@
-public class Solution {
-    public int getIntersection(int A, int B) {
-        int k = A*(A-1)/2;
-        k = k+B*(2*A +B-1);
-        return k;
-    }
-}
