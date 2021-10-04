@@ -1,0 +1,26 @@
+public class Solution {
+    public int solve(int A) {
+        A+=1;
+        int mod=1000000007;
+        int groupsize = 1;
+        //int remainder =0;
+        //int i =0;
+        int count =0;
+        while (A>=groupsize){
+            
+            int group = A/groupsize;
+            
+            int onecount= group/2;
+            count += (onecount*groupsize);
+            count%=mod;
+            if(group%2!=0){
+                int remainder = A%groupsize;
+                count+=remainder;
+            }
+            
+            count =count%mod;
+            groupsize=groupsize*2;
+        }
+        return count;
+    }
+}
