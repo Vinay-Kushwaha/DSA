@@ -1,0 +1,44 @@
+public class Solution {
+    public static int func(int arr[],int k, int n){
+     
+        
+        int ans = n;
+        int sum = 0;
+        int start = 0;
+         
+        
+        for(int end = 0; end < n; end++)
+        {
+             
+           
+            sum += (int)arr[end];
+             
+            while (sum > k)
+            {
+                 
+                
+                sum -= (int)arr[start];
+                start++;
+     
+                
+                ans = Math.min(ans, end - start + 1);
+     
+                
+                if (sum == 0)
+                    break;
+            }
+             
+            if (sum == 0)
+            {
+                ans = -1;
+                break;
+            }
+        }
+         
+      
+        return ans;
+ }
+    public int solve(int[] A, int B) {
+        return func(A,B,A.length);
+    }
+}
