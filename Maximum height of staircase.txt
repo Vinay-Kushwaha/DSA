@@ -1,0 +1,14 @@
+public class Solution {
+    public int solve(int A) {
+        int count =0;
+        int i =1;
+        while(A>0){
+            A-=i;
+            if(A>=0){
+                count++;
+            }
+            i++;
+        }
+        return count;
+    }
+}
