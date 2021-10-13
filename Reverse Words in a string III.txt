@@ -1,0 +1,32 @@
+class Solution {
+    public String reverseString(String s) {
+        
+        char temp[] = new char[s.length() ];
+        for(int i =0;i<s.length();i++ ){
+            temp[i]=s.charAt(i);
+        }
+        int start = 0;
+        int end = temp.length-1;
+        String ans ="";
+        while(start<=end){
+            char t = temp[start];
+            temp[start]=temp[end];
+            temp[end]=t;
+            
+            start++;
+            end--;
+        }
+        for(int i =0;i<temp.length;i++){
+            ans+=temp[i];
+        }
+        return ans;
+    }
+    public String reverseWords(String s) {
+        String str[] =s.split(" ");
+        String ans ="";
+        for(int i =0;i<str.length;i++ ){
+            ans += reverseString(str[i])+" ";
+        }
+        return ans.trim();
+    }
+}
