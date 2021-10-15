@@ -1,0 +1,27 @@
+public class Solution {
+    int ans=0;
+    public void sixlets(int []A, int B, int sum,int count, int idx){
+        if(sum>1000){
+            return;
+        }
+        if(count ==B){
+            ans+=1;
+            return;
+        }
+        
+        if(idx==A.length){
+            return;
+        }
+        //System.out.println(A+" "+B+" "+sum+" "+count+" "+idx);
+        sixlets(A,B,sum+A[idx],count+1,idx+1 );
+        //System.out.println(A+" "+B+" "+sum+" "+count+" "+idx);
+        sixlets(A,B,sum,count,idx+1);
+    }
+    public int solve(int[] A, int B) {
+        int sum =0;
+        int count =0;
+        int idx =0;
+        sixlets(A,B,sum,count,idx);
+        return ans;
+    }
+}
