@@ -1,0 +1,54 @@
+public class Solution {
+    public boolean isValid(ArrayList<ArrayList<Character>> a, int r, int c, char val){
+        int startrow = r-r%3;
+        int startcol = c-c%3;
+        for(int i =0;i<9;i++){
+            char temp = a.get(i).get(c);
+            if(temp == val ){
+                return false;
+            }
+        }
+        for(int i =0;i<9;i++){
+            char temp = a.get(r).get(i);
+            if(temp==val ){
+                return false;
+            }
+        }
+        for(int i =0;i<3;i++){
+            for(int j =0;j<3;j++){
+                if(a.get(i+startrow).get(j+startcol)==val ){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    public boolean sudoku(ArrayList<ArrayList<Character>> a, int r, int c ){
+        
+        if(c==9){
+            c=0;
+            r++;
+        }
+        if(r==9){
+            
+            return true;
+            
+        }
+        if(a.get(r).get(c)!='.' ){
+            return sudoku(a,r,c+1);
+        }
+        for(char ch ='1';ch<='9';ch++){
+            if(isValid(a,r,c,ch) ){
+                a.get(r).set(c,ch);
+                if(sudoku(a,r,c+1) ){
+                    return true;
+                }
+                a.get(r).set(c,'.');
+            }
+        }
+        return false;
+    }
+	public void solveSudoku(ArrayList<ArrayList<Character>> a) {
+	    sudoku(a,0,0);
+	}
+}
