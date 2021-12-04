@@ -14,5 +14,7 @@
  - ### [Problem Solving](https://github.com/Vinay-Kushwaha/DSA/tree/main/Problem%20Solving)
  |Topic Name|In other Sites|
  |:---:|:---:|
+ |Common Elements|[GeeksforGeeks](https://www.geeksforgeeks.org/union-and-intersection-of-two-sorted-arrays-2/)|
+ |First Missing Integer|[GeeksforGeeks](https://www.geeksforgeeks.org/find-the-smallest-positive-number-missing-from-an-unsorted-array/) [InterviewBit](https://www.interviewbit.com/problems/first-missing-integer/) [LeetCode](https://leetcode.com/problems/first-missing-positive/)|
  |Intersection Of Sorted Arrays| [GeeksforGeeks](https://www.geeksforgeeks.org/union-and-intersection-of-two-sorted-arrays-2/) [InterviewBit](https://www.interviewbit.com/problems/intersection-of-sorted-arrays/)|
  
